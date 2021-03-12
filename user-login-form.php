@@ -3,7 +3,7 @@
     <table>
         <tr>
             <td>Usuário:
-            <td><input type="text" name="usuario" id="usuario" size="30" maxlength="30"></td>
+            <td><input type="text" name="user" id="user" size="30" maxlength="30"></td>
             </td>
         </tr>
         <tr>
