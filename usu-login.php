@@ -23,14 +23,23 @@
         if (is_null($user) || is_null($pass)) {
             require "user-login-form.php";
         } else {
-            $q = "select nick, nome, senha, nivel from usuarios where nick = `$user`";
-            $search = $banco->query($q);
-            if (!$search) {
-                echo 'aaa';
+            $q = "select nick, nome, senha, nivel from usuarios where nick = '$user'";
+            $busca = $banco->query($q);
+            if (!$busca) {
+                echo 'Errado!';
             } else {
-                $reg = $search->fetch_object();
-                if (testarHash($pass, $reg->senha)) {
-                    echo "passou2";
+                if ($busca->num_rows > 0) {
+                    $reg = $busca->fetch_object();
+                    if (testarHash($pass, $reg->senha)) {
+                        echo "Logado com sucesso";
+                        $_SESSION['user'] = $reg->nick;
+                        $_SESSION['nome'] = $reg->nome;
+                        $_SESSION['nivel'] = $reg->nivel;
+                    } else {
+                        echo 'Senha inválida!';
+                    }
+                } else {
+                    echo 'Usuario n existe';
                 }
             }
         }

@@ -8,6 +8,7 @@ if (!isset($_SESSION['user'])) {
 }
 
 
+
 function gerarHash($senha)
 {
     $hash = password_hash($senha, PASSWORD_DEFAULT);
@@ -18,4 +19,12 @@ function testarHash($senha, $hash)
 {
     $verificador = password_verify($senha, $hash);
     return $verificador;
+}
+
+function logout()
+{
+    unset($_SESSION['nick']);
+    unset($_SESSION['user']);
+    unset($_SESSION['nome']);
+    unset($_SESSION['nivel']);
 }

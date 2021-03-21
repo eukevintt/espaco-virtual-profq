@@ -13,6 +13,13 @@
     require_once "includes/banco.php";
     require_once "includes/funcoes.php";
     require_once "includes/login.php";
+
+    if (isset($_SESSION['user'])) {
+        echo "<script>window.location='usu-login.php'</script>";
+    }
+
+    echo "Olá, " . $_SESSION['nome'] . " | <a href='user-logout.php'>Sair</a>";
+
     ?>
 
     <div>
