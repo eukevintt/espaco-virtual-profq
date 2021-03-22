@@ -16,8 +16,11 @@
     ?>
     <?php
     logout();
+    echo "<script>
+        window.location = 'usu-login.php'
+    </script>";
     ?>
-    deslogado com sucesso
+
 </body>
 
 </html>

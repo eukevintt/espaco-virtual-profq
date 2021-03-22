@@ -7,8 +7,6 @@ if (!isset($_SESSION['user'])) {
     $_SESSION['nivel'] = "";
 }
 
-
-
 function gerarHash($senha)
 {
     $hash = password_hash($senha, PASSWORD_DEFAULT);
@@ -27,4 +25,41 @@ function logout()
     unset($_SESSION['user']);
     unset($_SESSION['nome']);
     unset($_SESSION['nivel']);
+}
+
+function is_logado()
+{
+    if (empty($_SESSION['user'])) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function is_admin()
+{
+    $nivel = $_SESSION['nivel'] ?? null;
+    if (is_null($nivel)) {
+        return false;
+    } else {
+        if ($nivel == 'admin') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+function is_usuario()
+{
+    $nivel = $_SESSION['nivel'] ?? null;
+    if (is_null($nivel)) {
+        return false;
+    } else {
+        if ($nivel == 'usu') {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -22,15 +22,15 @@
         <table border=1>
 
             <tr>
-                <td>Foto</td>
+                <td>Nick</td>
                 <td>Nome</td>
                 <td>Escolha</td>
             </tr>
             <?php
-            $busca = $banco->query("select * from itinerari");
+            $busca = $banco->query("select usuarios.nick as unick,usuarios.nome as unome, itinerari.nome as itnome from usuarios join usu_it on usuarios.nick = usu_it.nick left join itinerari on itinerari.id_iti = usu_it.id_it");
 
             while ($reg = $busca->fetch_object()) {
-                echo "<tr><td>$reg->img</td><td>$reg->nome</td><td><input type='checkbox'></td></tr>";
+                echo "<tr><td>$reg->unick</td><td>$reg->unome</td><td>$reg->itnome</td></tr>";
             }
             ?>
         </table>

@@ -13,6 +13,11 @@
     require_once "includes/banco.php";
     require_once "includes/funcoes.php";
     require_once "includes/login.php";
+
+    if (!$_SESSION['user'] == "") {
+        echo "<script>window.location='home.php'</script>";
+    }
+
     ?>
 
     <div>
@@ -31,10 +36,10 @@
                 if ($busca->num_rows > 0) {
                     $reg = $busca->fetch_object();
                     if (testarHash($pass, $reg->senha)) {
-                        echo "Logado com sucesso";
                         $_SESSION['user'] = $reg->nick;
                         $_SESSION['nome'] = $reg->nome;
                         $_SESSION['nivel'] = $reg->nivel;
+                        echo "<script>window.location='home.php'</script>";
                     } else {
                         echo 'Senha inválida!';
                     }
