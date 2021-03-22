@@ -15,7 +15,7 @@
     require_once "includes/login.php";
 
     if (!$_SESSION['user'] == "") {
-        echo "<script>window.location='home.php'</script>";
+        echo "<script>window.location='usu-login.php'</script>";
     }
 
     ?>
