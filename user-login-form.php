@@ -1,18 +1,15 @@
-<h1>Efetue o login</h1>
-<form action="usu-login.php" method="post">
-    <table>
-        <tr>
-            <td>Usuário:
-            <td><input type="text" name="user" id="user" size="30" maxlength="30"></td>
-            </td>
-        </tr>
-        <tr>
-            <td>Senha:
-            <td><input type="password" name="senha" id="senha"></td>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="Entrar"></td>
-        </tr>
-    </table>
-</form>
+<div class="py-5 container">
+    <h1 class="display-5 text-center">Efetue o login</h1>
+    <form action="usu-login.php" method="post" class="px-4 py-3">
+        <div class="mb-3">
+            <label for="user">Usuário</label>
+            <input type="text" name="user" id="user" placeholder='Nick' class='form-control'>
+        </div>
+        <div class="mb-3">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" placeholder='Senha' class='form-control'>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+</div>

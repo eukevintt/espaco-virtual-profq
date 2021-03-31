@@ -4,9 +4,7 @@ $busca = $banco->query($q);
 $reg = $busca->fetch_object();
 ?>
 
-<h1>Alteração de dados</h1>
 
-<p>Obs: Você não pode mudar seu usuário e se deixar o campo senha vazio, a senha irá continuar a mesma!</p>
 
 <form action="perfil.php" method="post">
     Usuario: <input type="text" name="usuario" id="usuario" maxlength="30" value="<?php echo $reg->nick ?>" readonly>
