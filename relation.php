@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Itinerários</title>
 </head>
 
@@ -20,8 +22,11 @@
 
     ?>
 
-    <div>
-        <h1>Relação das escolhas</h1>
+    <div class='text-center container'>
+        <div class='py-4'>
+            <i class='material-icons d-inline'>ballot</i>
+            <p class='display-5 text-center d-inline'>Relação das escolhas</p>
+        </div>
         <table id="example" class="cell-border, hover, row-border, display" style="width:100%">
             <thead>
                 <tr>

@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Itinerários</title>
 </head>
 
@@ -41,7 +43,8 @@
 
             // select usuarios.nick as unick,usuarios.nome as unome, itinerari.nome as itnome from usuarios join usu_it on usuarios.nick = usu_it.nick left join itinerari on itinerari.id_iti = usu_it.id_it
         } else {
-            echo "Parece que é uma das primeiras vezes que você entra aqui, <a href='itinerarios.php'>escolha seus itinerarios</a>";
+            echo "<div class='alert alert-warning text-center' role='alert'><i class='material-icons'>announcement</i>
+            Parece que é uma das primeiras vezes que você entra aqui, <a href='itinerarios.php'>escolha seus itinerarios.</a></div>";
         }
         ?>
         </table>

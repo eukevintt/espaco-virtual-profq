@@ -6,3 +6,7 @@
 .texto-centralizado {
   text-align: center;
 }
+
+.active {
+  color: black !important;
+}

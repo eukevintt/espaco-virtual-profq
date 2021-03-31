@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Itinerários</title>
 </head>
 
 <body>
     <?php
+    $novousu = 'active';
     require_once "includes/banco.php";
     require_once "includes/funcoes.php";
     require_once "includes/login.php";
@@ -24,7 +27,7 @@
     ?>
 
     <div>
-        <h1>Crie um novo usuário</h1>
+
         <?php
         if (!isset($_POST['usuario'])) {
             require "novo-usuario-form.php";
@@ -42,9 +45,11 @@
                     $senha = gerarHash($senha1);
                     $q = "insert into usuarios values('$nick', '$nome', '$senha', '$nivel')";
                     if ($banco->query($q)) {
-                        echo "Usuário cadastrado!";
+                        echo '<div class="alert alert-success text-center fade show w-50 mx-auto" role="alert"><i class="material-icons">done</i>Usuário cadastrado!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                        require "novo-usuario-form.php";
                     } else {
-                        echo "Não foi possivel criar o usuário, o usuário já está sendo usado";
+                        echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons">error</i>Não foi possivel criar o usuário, o usuário já está sendo usado<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                        require "novo-usuario-form.php";
                     }
                 }
             } else {

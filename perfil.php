@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Meu perfil</title>
 </head>
 
@@ -20,9 +22,13 @@
     ?>
 
     <div>
-        <h1 class="display-5">Alteração de dados</h1>
-
-        <p>Obs: Você não pode mudar seu usuário e se deixar o campo senha vazio, a senha irá continuar a mesma!</p>
+        <div class='py-4 text-center'>
+            <i class='material-icons d-inline'>border_color</i>
+            <h1 class="display-5 d-inline">Alteração de dados</h1>
+        </div>
+        <div class="alert alert-warning text-center py-2 mb-5" role="alert">
+            Obs: Você não pode mudar seu usuário e se deixar o campo senha vazio, a senha irá continuar a mesma!
+        </div>
         <?php
         if (!isset($_POST['usuario'])) {
             include "user-edit-form.php";
@@ -45,7 +51,7 @@
             if ($banco->query($q)) {
                 echo "Dados alterados";
                 logout();
-                echo "<script>window.location='usu-login.php'</script>";
+                echo "<script>window.location='index.php'</script>";
             } else {
                 echo "Algo deu errado na hora de alterar";
             }
