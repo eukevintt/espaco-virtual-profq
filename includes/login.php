@@ -21,10 +21,10 @@ function testarHash($senha, $hash)
 
 function logout()
 {
-    unset($_SESSION['nick']);
-    unset($_SESSION['user']);
-    unset($_SESSION['nome']);
-    unset($_SESSION['nivel']);
+    $_SESSION['nick'] = "";
+    $_SESSION['user'] = "";
+    $_SESSION['nome'] = "";
+    $_SESSION['nivel'] = "";
 }
 
 function is_logado()

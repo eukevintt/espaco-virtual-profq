@@ -44,16 +44,21 @@
                     $senha = gerarHash($senha1);
                     $q .= ", senha='$senha'";
                 } else {
-                    echo "Senhas não conferem!";
+                    echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">password</i>As senhas não conferem!<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                    include "user-edit-form.php";
                 }
             }
             $q .= " where nick='" . $_SESSION['user'] . "'";
             if ($banco->query($q)) {
-                echo "Dados alterados";
+
+                echo '<div class="alert alert-success text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">done</i>Realize novamente seu login</div>';
                 logout();
-                echo "<script>window.location='index.php'</script>";
+                echo "<script>setTimeout(function(){
+                        window.location='index.php'
+                    }, 2000)</script>";
             } else {
-                echo "Algo deu errado na hora de alterar";
+                echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">error</i>Algo deu errado na hora de alterar<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                include "user-edit-form.php";
             }
         }
         ?>

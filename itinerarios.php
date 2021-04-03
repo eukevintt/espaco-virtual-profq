@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Itinerários</title>
 </head>
 
@@ -17,6 +18,14 @@
     require_once "includes/login.php";
     require_once "includes/head.php";
 
+    $busca = $banco->query("select * from usu_it");
+    while ($reg = $busca->fetch_object()) {
+
+        if ($reg->nick === $_SESSION['user']) {
+            echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">pan_tool</i>Parado ai, você já tem itinerários, volte para o inicio!</div>';
+            exit;
+        }
+    }
     ?>
 
     <div>
@@ -41,8 +50,8 @@
                     }
                 }
                 ?>
+                <input type="submit" value="enviar">
             </form>
-            <input type="submit" value="enviar">
         </table>
 
         <?php

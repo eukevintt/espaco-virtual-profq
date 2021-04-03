@@ -45,12 +45,12 @@
                         $_SESSION['nivel'] = $reg->nivel;
                         echo "<script>window.location='home.php'</script>";
                     } else {
-                        echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons">error</i>Senha inválida!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                        echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">error</i>Senha inválida!<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                         require "user-login-form.php";
                     }
                 } else {
-                    echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons">error</i>Usuário errado!
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                    echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">error</i>Usuário errado!
+                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                     require "user-login-form.php";
                 }
             }
