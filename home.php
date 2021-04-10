@@ -73,7 +73,7 @@
                             <div class='card-body'>
                               <h5 class='card-title text-center'>$reg2->itinome</h5>
                               <p class='card-text'>$reg2->itidesc</p>
-                              <a href='$link' class='btn btn-primary'>Ir para o link</a>
+                              <a href='$link' class='btn btn-primary' target='_blank'>Ir para o link</a>
                             </div>
                         </div>
                     </div>";
